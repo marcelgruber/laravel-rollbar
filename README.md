@@ -22,11 +22,14 @@ Configuration
 -------------
 
 This package supports configuration through the services configuration file located in `app/config/services.php`. All configuration variables will be directly passed to Rollbar:
-
-    'rollbar' => array(
-        'access_token' => 'your-rollbar-token',
-        'level' => 'debug'
-    ),
+    
+    <?php
+        return array(
+            'rollbar' => array(
+                'access_token' => 'your-rollbar-token',
+                'level' => 'debug'
+            ),
+        );
 
 The level variable defines the minimum log level at which log messages are sent to Rollbar. For development you could set this either to `debug` to send all log messages, or to `none` to sent no messages at all. For production you could set this to `error` so that all info and debug messages are ignored.
 
